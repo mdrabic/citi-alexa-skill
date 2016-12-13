@@ -1,0 +1,19 @@
+{
+  "creditCardAccount": {
+    "productName": "Citi Choice Visa",
+    "displayAccountNumber": "Citi Choice Visa - 3250",
+    "currencyCode": "USD",
+    "outstandingBalance": 3527.53,
+    "lastStatementDate": "2016-08-15",
+    "lastStatementBalance": 150,
+    "creditUsed": 981.43,
+    "creditLimit": 1000,
+    "availableCredit": 18.57,
+    "cashAdvanceLimit": 100,
+    "cashAdvanceAvailableAmount": 100,
+    "lastPaymentDate": "2016-12-06",
+    "lastPaymentAmount": 500,
+    "paymentDueDate": "2017-01-04",
+    "minimumDueAmount": 97.99
+  }
+}
