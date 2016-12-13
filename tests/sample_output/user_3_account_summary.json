@@ -1,0 +1,27 @@
+{
+  "accountGroupSummary": [
+    {
+      "accountGroup": "CREDITCARD",
+      "accounts": [
+        {
+          "creditCardAccountSummary": {
+            "productName": "Citi Illumina Card",
+            "displayAccountNumber": "Citi Illumina Card - 0378",
+            "accountId": "2016764541",
+            "currencyCode": "USD",
+            "accountClassification": "ASSET",
+            "accountStatus": "OPEN",
+            "outstandingBalance": 5150.89,
+            "creditLimit": 10000,
+            "availableCredit": 9308.4,
+            "paymentDueDate": "2017-01-03",
+            "minimumDueAmount": 143
+          }
+        }
+      ],
+      "totalOutstandingBalance": {
+        "localCurrencyCode": "USD",
+        "localCurrencyBalanceAmount": 5150.89
+      }
+    }
+  ]

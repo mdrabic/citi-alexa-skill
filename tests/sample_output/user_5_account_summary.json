@@ -1,0 +1,28 @@
+{
+  "accountGroupSummary": [
+    {
+      "accountGroup": "CREDITCARD",
+      "accounts": [
+        {
+          "creditCardAccountSummary": {
+            "productName": "Citi Gold AAdvantage World MasterCard",
+            "displayAccountNumber": "Citi Gold AAdvantage World MasterCard - 1942",
+            "accountId": "2016569046",
+            "currencyCode": "USD",
+            "accountClassification": "ASSET",
+            "accountStatus": "OPEN",
+            "outstandingBalance": 7273.87,
+            "creditLimit": 8500,
+            "availableCredit": 7668.76,
+            "paymentDueDate": "2017-01-03",
+            "minimumDueAmount": 202
+          }
+        }
+      ],
+      "totalOutstandingBalance": {
+        "localCurrencyCode": "USD",
+        "localCurrencyBalanceAmount": 7273.87
+      }
+    }
+  ]
+}

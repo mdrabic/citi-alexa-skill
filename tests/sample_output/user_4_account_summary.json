@@ -1,0 +1,28 @@
+{
+  "accountGroupSummary": [
+    {
+      "accountGroup": "CREDITCARD",
+      "accounts": [
+        {
+          "creditCardAccountSummary": {
+            "productName": "Citi AAdvantage MasterCard",
+            "displayAccountNumber": "Citi AAdvantage MasterCard - 0970",
+            "accountId": "2016678958",
+            "currencyCode": "USD",
+            "accountClassification": "ASSET",
+            "accountStatus": "OPEN",
+            "outstandingBalance": 7785.84,
+            "creditLimit": 15000,
+            "availableCredit": 11201.57,
+            "paymentDueDate": "2017-01-03",
+            "minimumDueAmount": 216.2
+          }
+        }
+      ],
+      "totalOutstandingBalance": {
+        "localCurrencyCode": "USD",
+        "localCurrencyBalanceAmount": 7785.84
+      }
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+	"nextStartIndex": "fddsadsf32424gffsfsfddsgf3324",
+	"accountGroupSummary": [{
+		"totalAvailableBalance": "",
+		"accountGroup": "SAVINGS",
+		"totalCurrentBalance": {
+			"localCurrencyBalanceAmount": 8900.12,
+			"foreignCurrencyCode": "SGD",
+			"localCurrencyCode": "AUD",
+			"foreignCurrencyBalanceAmount": 8880.1
+		},
+		"accounts": [{
+			"creditCardAccountSummary": {
+				"accountStatus": "ACTIVE",
+				"minimumDueAmount": 256.5,
+				"accountId": "AB34512DEF984DBBACEA",
+				"paymentDueDate": "2016-10-05",
+				"availableCredit": 15000.0,
+				"accountNickname": "Credit Card Account for My Travels",
+				"creditLimit": 25000.0,
+				"displayAccountNumber": "XXXXX2391",
+				"currencyCode": "USD",
+				"productName": "Citibank Platinum Visa",
+				"accountClassification": "LIABILITY",
+				"outstandingBalance": 10000.25
+			},
+			"checkingAccountSummary": {
+				"accountStatus": "OPEN",
+				"accountId": "AB34512DEF984DBBACEA",
+				"currentBalance": 10000.25,
+				"accountNickname": "Account for Tax Deduction Only",
+				"displayAccountNumber": "XXXXX2391",
+				"currencyCode": "AUD",
+				"productName": "Personal Checking Account",
+				"accountClassification": "ASSET",
+				"availableBalance": 15000.25
+			},
+			"savingsAccountSummary": {
+				"accountStatus": "OPEN",
+				"accountId": "AB34512DEF984DBBACEA",
+				"currentBalance": 10000.25,
+				"accountNickname": "Personal Savings Account",
+				"displayAccountNumber": "XXXXX2391",
+				"currencyCode": "AUD",
+				"productName": "Personal Savings Account",
+				"accountClassification": "ASSET",
+				"availableBalance": 15000.25
+			}
+		}],
+		"totalOutstandingBalance": ""
+	}]
+}

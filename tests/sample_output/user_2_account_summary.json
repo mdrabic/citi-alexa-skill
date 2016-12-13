@@ -1,0 +1,28 @@
+{
+  "accountGroupSummary": [
+    {
+      "accountGroup": "CREDITCARD",
+      "accounts": [
+        {
+          "creditCardAccountSummary": {
+            "productName": "AT&T Universal Card",
+            "displayAccountNumber": "AT&T Universal Card - 1116",
+            "accountId": "2016879952",
+            "currencyCode": "USD",
+            "accountClassification": "ASSET",
+            "accountStatus": "OPEN",
+            "outstandingBalance": 5631.42,
+            "creditLimit": 8000,
+            "availableCredit": 5803.29,
+            "paymentDueDate": "2017-01-03",
+            "minimumDueAmount": 156.4
+          }
+        }
+      ],
+      "totalOutstandingBalance": {
+        "localCurrencyCode": "USD",
+        "localCurrencyBalanceAmount": 5631.42
+      }
+    }
+  ]
+}
