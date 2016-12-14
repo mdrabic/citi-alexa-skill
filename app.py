@@ -1,5 +1,6 @@
-import json
+from __future__ import print_function
 
+import json
 import response_util
 import citi
 import logging
@@ -13,6 +14,8 @@ def lambda_handler(event, context):
         raise ValueError("Invalid Application ID")
 
     has_access_token = "accessToken" in event["session"]["user"]
+
+    print("hello world!")
 
     if event["session"]["new"] and not has_access_token:
         return build_link_account_response()
@@ -59,7 +62,7 @@ def on_intent(request, session):
 
     if intent_name == "AccountSummary":
         summary = get_summary_of_accounts(access_token)
-        print json.dumps(summary)
+        print(json.dumps(summary))
         return summary
     else:
         speechlet = response_util.build_speechlet_response("hello", "intent launched", "nothing more", True)
@@ -73,6 +76,7 @@ def on_session_ended(request, session):
 def get_summary_of_accounts(access_token):
     summary = citi.get_account_summary(access_token, CLIENT_ID)
     response = ""
+    print(summary)
 
     if "accountGroupSummary" in summary:
         for account_summary in summary["accountGroupSummary"]:
