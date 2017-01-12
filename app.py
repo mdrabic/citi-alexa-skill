@@ -15,10 +15,8 @@ def lambda_handler(event, context):
 
     has_access_token = "accessToken" in event["session"]["user"]
 
-    print("hello world!")
-
     if event["session"]["new"] and not has_access_token:
-        return build_link_account_response()
+        return response_util.build_link_account_response()
 
     if event["request"]["type"] == "LaunchRequest":
         return on_launch(event["request"], event["session"])
@@ -26,29 +24,6 @@ def lambda_handler(event, context):
         return on_intent(event["request"], event["session"])
     elif event["request"]["type"] == "SessionEndedRequest":
         return on_session_ended(event["request"], event["session"])
-
-
-def build_link_account_response():
-    speechlet = {
-        "outputSpeech": {
-            "type": "PlainText",
-            "text": "please link your account"
-        },
-        "card": {
-            "type": "LinkAccount",
-            "title": "Levvel Wallet",
-            "content": "please link your account"
-        },
-        "reprompt": {
-            "outputSpeech": {
-                "type": "PlainText",
-                "text": "please link your account"
-            }
-        },
-        "shouldEndSession": True
-    }
-
-    return response_util.build_response({}, speechlet)
 
 
 def on_launch(request, session):
@@ -64,6 +39,15 @@ def on_intent(request, session):
         summary = get_summary_of_accounts(access_token)
         print(json.dumps(summary))
         return summary
+    elif intent_name == "AccountDetail":
+
+        return
+    elif intent_name == "NextPaymentDue":
+
+        return
+    elif intent_name == "OutstandingBalance":
+
+        return
     else:
         speechlet = response_util.build_speechlet_response("hello", "intent launched", "nothing more", True)
         return response_util.build_response({}, speechlet)
