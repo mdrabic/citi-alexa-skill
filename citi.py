@@ -18,7 +18,7 @@ def get_account_summary(access_token, client_id):
 
     response = requests.get(BASE_URL + ACCOUNTS_URL, headers=headers)
 
-    # todo handle nextStartIndex
+    # todo handle nextStartIndex -- not needed for demo as sandbox only has a few accounts
 
     return response.json()
 
