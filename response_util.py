@@ -58,3 +58,12 @@ def build_link_account_response():
     }
 
     return build_response({}, speechlet)
+
+
+def convert_to_speech(display_account_number):
+    """
+    Converts the display account number returned form Citi into a speech friendly representation.
+    :param display_account_number: the display account number in the format "<card brand/model> - <digits>"
+    :return: a string in the format "<card brand/model> ending in <digits>"
+    """
+    return display_account_number.replace("-", "ending in")

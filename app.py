@@ -69,17 +69,9 @@ def get_summary_of_accounts(access_token):
                     if "creditCardAccountSummary" in account:
                         credit_summary = account["creditCardAccountSummary"]
                         response += "For your %s, your available balance is $%s." % (
-                            convert_to_speech(credit_summary["displayAccountNumber"]),
+                            response_util.convert_to_speech(credit_summary["displayAccountNumber"]),
                             credit_summary["availableCredit"])
 
     speechlet = response_util.build_speechlet_response(response, "Account Summary", "reprompt can't be empty", True)
     return response_util.build_response({}, speechlet)
 
-
-def convert_to_speech(display_account_number):
-    """
-    Converts the display account number returned form Citi into a speech friendly representation.
-    :param display_account_number: the display account number in the format "<card brand/model> - <digits>"
-    :return: a string in the format "<card brand/model> ending in <digits>"
-    """
-    return display_account_number.replace("-", "ending in")

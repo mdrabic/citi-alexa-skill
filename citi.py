@@ -40,6 +40,3 @@ def get_account_detail(access_token, client_id, account_id):
     response = requests.get(url, headers=headers)
 
     return response.json()
-
-
-
