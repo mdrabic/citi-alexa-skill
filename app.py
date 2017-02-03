@@ -68,7 +68,7 @@ def get_summary_of_accounts(access_token):
                 for account in account_summary["accounts"]:
                     if "creditCardAccountSummary" in account:
                         credit_summary = account["creditCardAccountSummary"]
-                        response += "For your %s, your available balance is %s." % (
+                        response += "For your %s, your available balance is $%s." % (
                             convert_to_speech(credit_summary["displayAccountNumber"]),
                             credit_summary["availableCredit"])
 
