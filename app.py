@@ -59,19 +59,6 @@ def on_session_ended(request, session):
 
 def get_summary_of_accounts(access_token):
     summary = citi.get_account_summary(access_token, CLIENT_ID)
-    response = ""
     print(summary)
-
-    if "accountGroupSummary" in summary:
-        for account_summary in summary["accountGroupSummary"]:
-            if account_summary["accountGroup"] == "CREDITCARD":
-                for account in account_summary["accounts"]:
-                    if "creditCardAccountSummary" in account:
-                        credit_summary = account["creditCardAccountSummary"]
-                        response += "For your %s, your available balance is $%s." % (
-                            response_builder.convert_to_speech(credit_summary["displayAccountNumber"]),
-                            credit_summary["availableCredit"])
-
-    speechlet = response_builder.build_speechlet_response(response, "Account Summary", "reprompt can't be empty", True)
-    return response_builder.build_response({}, speechlet)
+    return response_builder.build_account_summary(summary)
 
