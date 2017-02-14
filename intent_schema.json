@@ -7,24 +7,6 @@
       "intent" : "ListAccounts"
     },
     {
-      "intent" : "AccountDetail",
-      "slots" : [
-          {
-          "name" : "AccountNumber",
-          "type" : "AMAZON.NUMBER"
-          }
-		]
-    },
-    {
-      "intent" : "NextPaymentDue",
-      "slots" : [
-          {
-          "name" : "AccountNumber",
-          "type" : "AMAZON.NUMBER"
-          }
-		]
-    },
-    {
       "intent" : "OutstandingBalance",
       "slots" : [
           {
