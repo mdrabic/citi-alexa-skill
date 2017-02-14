@@ -1,7 +1,7 @@
 from __future__ import print_function
 
 import json
-import response_util
+import response_builder
 import citi
 import logging
 
@@ -16,7 +16,7 @@ def lambda_handler(event, context):
     has_access_token = "accessToken" in event["session"]["user"]
 
     if event["session"]["new"] and not has_access_token:
-        return response_util.build_link_account_response()
+        return response_builder.build_link_account_response()
 
     if event["request"]["type"] == "LaunchRequest":
         return on_launch(event["request"], event["session"])
@@ -27,8 +27,8 @@ def lambda_handler(event, context):
 
 
 def on_launch(request, session):
-    speechlet = response_util.build_speechlet_response("hello", "intent launched", "nothing more", True)
-    return response_util.build_response({}, speechlet)
+    speechlet = response_builder.build_speechlet_response("hello", "intent launched", "nothing more", True)
+    return response_builder.build_response({}, speechlet)
 
 
 def on_intent(request, session):
@@ -39,18 +39,18 @@ def on_intent(request, session):
         summary = get_summary_of_accounts(access_token)
         print(json.dumps(summary))
         return summary
-    elif intent_name == "AccountDetail":
-
-        return
-    elif intent_name == "NextPaymentDue":
+    elif intent_name == "ListAccounts":
 
         return
     elif intent_name == "OutstandingBalance":
 
         return
+    elif intent_name == "RecentTransactions":
+
+        return
     else:
-        speechlet = response_util.build_speechlet_response("hello", "intent launched", "nothing more", True)
-        return response_util.build_response({}, speechlet)
+        speechlet = response_builder.build_speechlet_response("hello", "intent launched", "nothing more", True)
+        return response_builder.build_response({}, speechlet)
 
 
 def on_session_ended(request, session):
@@ -69,9 +69,9 @@ def get_summary_of_accounts(access_token):
                     if "creditCardAccountSummary" in account:
                         credit_summary = account["creditCardAccountSummary"]
                         response += "For your %s, your available balance is $%s." % (
-                            response_util.convert_to_speech(credit_summary["displayAccountNumber"]),
+                            response_builder.convert_to_speech(credit_summary["displayAccountNumber"]),
                             credit_summary["availableCredit"])
 
-    speechlet = response_util.build_speechlet_response(response, "Account Summary", "reprompt can't be empty", True)
-    return response_util.build_response({}, speechlet)
+    speechlet = response_builder.build_speechlet_response(response, "Account Summary", "reprompt can't be empty", True)
+    return response_builder.build_response({}, speechlet)
 
