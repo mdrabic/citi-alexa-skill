@@ -1,0 +1,21 @@
+AccountSummary to brief me on my accounts
+AccountSummary to brief me
+AccountSummary to give me my briefing
+
+ListAccounts to list my accounts
+ListAccounts to list accounts
+ListAccounts what are my accounts
+ListAccounts what accounts do I have
+
+OutstandingBalance what is the outstanding balance on my account
+OutstandingBalance what is my account balance
+OutstandingBalance what is my outstanding balance
+OutstandingBalance what is the outstanding balance on my account ending in {AccountNumber}
+OutstandingBalance what is my outstanding balance on my account ending in {AccountNumber}
+OutstandingBalance what is the outstanding balance on account {AccountNumber}
+
+RecentTransactions what are my recent transactions
+RecentTransactions what are my recent transactions on my account ending in {AccountNumber}
+RecentTransactions what are my recent transactions on account {AccountNumber}
+RecentTransactions to list the recent transactions on my account ending in {AccountNumber}
+RecentTransactions to list the recent transactions on account {AccountNumber}
