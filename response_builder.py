@@ -94,7 +94,8 @@ def build_account_summary(summary):
 
     response += account_summaries
 
-    speechlet = build_speechlet_response(response, "Account Summary", "reprompt can't be empty", True)
+    # call str() to remove the unicode prefix
+    speechlet = build_speechlet_response(str(response), "Account Summary", "reprompt can't be empty", True)
     return build_response({}, speechlet)
 
 
