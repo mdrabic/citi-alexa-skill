@@ -69,20 +69,47 @@ def build_link_account_response():
 
 
 def build_account_summary(summary):
-    response = ""
+    """
+    Builds the response for account summary/briefing
+    :param summary: the summary response/dict from the citi api
+    :return:
+    """
+    account_summaries = ""
+    number_of_accounts = 0
 
     if "accountGroupSummary" in summary:
         for account_summary in summary["accountGroupSummary"]:
             if account_summary["accountGroup"] == "CREDITCARD":
                 for account in account_summary["accounts"]:
+                    number_of_accounts += 1
                     if "creditCardAccountSummary" in account:
-                        credit_summary = account["creditCardAccountSummary"]
-                        response += "For your %s, your available balance is $%s." % (
-                            display_account_number_to_speech(credit_summary["displayAccountNumber"]),
-                            credit_summary["availableCredit"])
+                        account_summaries += credit_summary_to_speech(account["creditCardAccountSummary"])
+
+    if number_of_accounts == 0:
+        response = "You do not have any credit card accounts."
+    elif number_of_accounts == 1:
+        response = "You have %d account."
+    else:
+        response = "You have %d accounts."
+
+    response += account_summaries
 
     speechlet = build_speechlet_response(response, "Account Summary", "reprompt can't be empty", True)
     return build_response({}, speechlet)
+
+
+def credit_summary_to_speech(credit_summary):
+    """
+    Create the speech text for a single credit account summary
+    :param credit_summary: Dict
+    :return: a string in the format "For your %s, your outstanding balance is $%s and you have a remaining balance
+             of $%s."
+    """
+    return "For your %s, your outstanding balance is $%s and" \
+        "you have a remaining balance of $%s." % (
+            display_account_number_to_speech(credit_summary["displayAccountNumber"]),
+            credit_summary["outstandingBalance"],
+            credit_summary["availableCredit"])
 
 
 def display_account_number_to_speech(display_account_number):
