@@ -86,11 +86,11 @@ def build_account_summary(summary):
                         account_summaries += credit_summary_to_speech(account["creditCardAccountSummary"])
 
     if number_of_accounts == 0:
-        response = "You do not have any credit card accounts."
+        response = "You do not have any credit card accounts. "
     elif number_of_accounts == 1:
-        response = "You have %d account."
+        response = "You have %d account. " % number_of_accounts
     else:
-        response = "You have %d accounts."
+        response = "You have %d accounts. " % number_of_accounts
 
     response += account_summaries
 
@@ -105,7 +105,7 @@ def credit_summary_to_speech(credit_summary):
     :return: a string in the format "For your %s, your outstanding balance is $%s and you have a remaining balance
              of $%s."
     """
-    return "For your %s, your outstanding balance is $%s and" \
+    return "For your %s, your outstanding balance is $%s and " \
         "you have a remaining balance of $%s." % (
             display_account_number_to_speech(credit_summary["displayAccountNumber"]),
             credit_summary["outstandingBalance"],
